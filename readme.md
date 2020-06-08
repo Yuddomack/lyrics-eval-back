@@ -21,3 +21,8 @@
   $ git commit
   ... 템플릿 수정
   ```
+
+### 0-2. 프로젝트 세팅 history
+
+1. lint
+   - eslint airbnb-base 세팅
