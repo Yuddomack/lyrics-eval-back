@@ -25,4 +25,6 @@
 ### 0-2. 프로젝트 세팅 history
 
 1. lint
-   - eslint airbnb-base 세팅
+   - eslint airbnb-base rule 세팅
+   - prettier rule 세팅
+   - rule은 필요에 따라 팀원과 협의하여 변경하도록 함
