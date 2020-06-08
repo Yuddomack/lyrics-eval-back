@@ -1,0 +1,13 @@
+
+# <issue> <label>: <title>
+#
+# 예시1) #302 fixed: 가나다라마바사 해결
+# 예시2) create: prettier config 생성
+# 예시3) update: 덧셈 로직 수정
+#
+# <issue> - optionnal
+#   - #xxx      : issue 번호
+# <label>
+#   - create    : 파일 생성
+#   - update    : 로직 수정
+#   - etc       : 기타
