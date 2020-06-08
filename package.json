@@ -1,0 +1,19 @@
+{
+  "name": "lyrics-eval-back",
+  "version": "1.0.0",
+  "description": "가사 평가 backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --watchAll --vervose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forus-ai/lyrics-eval-back.git"
+  },
+  "author": "yuddomack of forus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/forus-ai/lyrics-eval-back/issues"
+  },
+  "homepage": "https://github.com/forus-ai/lyrics-eval-back#readme"
+}
