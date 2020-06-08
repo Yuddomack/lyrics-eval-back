@@ -17,8 +17,12 @@
   },
   "homepage": "https://github.com/forus-ai/lyrics-eval-back#readme",
   "devDependencies": {
+    "@types/jest": "^25.2.3",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.21.1"
+  },
+  "dependencies": {
+    "jest": "^26.0.1"
   }
 }
