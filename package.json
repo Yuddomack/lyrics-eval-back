@@ -25,8 +25,9 @@
     "eslint-plugin-import": "^2.21.1"
   },
   "dependencies": {
+    "command-line-args": "^5.1.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jest": "^26.0.1",
-    "command-line-args": "^5.1.1"
+    "jest": "^26.0.1"
   }
 }
