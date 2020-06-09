@@ -4,6 +4,8 @@
   "description": "가사 평가 backend",
   "main": "app.js",
   "scripts": {
+    "dev": "node app.js --env dev",
+    "prod": "node app.js --env prod",
     "test": "jest --watchAll --vervose"
   },
   "repository": {
@@ -24,6 +26,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "command-line-args": "^5.1.1"
   }
 }
