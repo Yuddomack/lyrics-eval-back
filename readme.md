@@ -42,3 +42,7 @@
        PROD_PORT=9002
        PROD_DB_HOST=xxx.xxx.xxx
      ```
+
+### 0-3. 알려진 에러
+
+- `Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client` - connect-timeout 미들웨어를 추가하여, 처리 시간이 오래 걸리면 response timeout을 응답하도록 하는데, 이렇게 응답이 완료된 상태에서 뒤늦게 실제 요청이 처리되어 response를 조작하는 경우 발생 (위험도 낮음)
