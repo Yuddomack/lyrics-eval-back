@@ -25,6 +25,11 @@
 ### 0-2. 프로젝트 세팅 history
 
 1. lint
+
    - eslint airbnb-base rule 세팅
    - prettier rule 세팅
    - rule은 필요에 따라 팀원과 협의하여 변경하도록 함
+
+2. config
+   - command line args를 사용하여 `dev`, `prod` argument를 사용할 수 있도록 함
+   - package.json에 npm run dev, npm run prod 스크립트 작성
