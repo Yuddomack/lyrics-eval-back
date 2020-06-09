@@ -1,11 +1,18 @@
 const express = require('express');
 const createError = require('http-errors');
+const timeout = require('connect-timeout');
 const configs = require('./configs');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(timeout(configs.TIMEOUT_LIMIT));
+app.use((req, res, next) => {
+  if (!req.timedout) {
+    next();
+  }
+});
 app.use('/', require('./routes'));
 
 app.use((req, res, next) => {
