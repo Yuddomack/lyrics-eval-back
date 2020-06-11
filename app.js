@@ -4,8 +4,10 @@ const morgan = require('morgan');
 const fs = require('fs');
 const timeout = require('connect-timeout');
 const { PORT, LOG_FORMAT, TIMEOUT_LIMIT, configStatus } = require('./configs');
+const { sequelize } = require('./models');
 
 const app = express();
+sequelize.sync();
 
 // REVIE: 필요하다면 설정부 분리
 app.use(express.json());
