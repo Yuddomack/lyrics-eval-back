@@ -1,13 +1,27 @@
 const express = require('express');
 const createError = require('http-errors');
+const morgan = require('morgan');
+const fs = require('fs');
 const timeout = require('connect-timeout');
-const configs = require('./configs');
+const { PORT, LOG_FORMAT, TIMEOUT_LIMIT, configStatus } = require('./configs');
 
 const app = express();
 
+// REVIE: 필요하다면 설정부 분리
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(timeout(configs.TIMEOUT_LIMIT));
+morgan.token('body', (req) => JSON.stringify(req.body));
+app.use(
+  morgan(LOG_FORMAT, {
+    stream: fs.createWriteStream(
+      `logs/${new Date().toLocaleDateString()}.${configStatus}.log`,
+      {
+        flags: 'a',
+      }
+    ),
+  })
+);
+app.use(timeout(TIMEOUT_LIMIT));
 app.use((req, res, next) => {
   if (!req.timedout) {
     next();
@@ -22,11 +36,11 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   console.log(err);
   res.locals.message = err.message;
-  res.locals.error = configs.configStatus === 'dev' ? err : {};
+  res.locals.error = configStatus === 'dev' ? err : {};
   res.status(err.status || 500);
-  res.send(configs.configStatus === 'dev' ? { err } : { err: err.status });
+  res.send(configStatus === 'dev' ? { err } : { err: err.status });
 });
 
-app.listen(configs.PORT, () => {
-  console.log(`[${configs.configStatus}] Connect ${configs.PORT} port`);
+app.listen(PORT, () => {
+  console.log(`[${configStatus}] Connect ${PORT} port`);
 });
