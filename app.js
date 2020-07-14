@@ -16,7 +16,7 @@ morgan.token('body', (req) => JSON.stringify(req.body));
 app.use(
   morgan(LOG_FORMAT, {
     stream: fs.createWriteStream(
-      `logs/${new Date().toLocaleDateString()}.${configStatus}.log`,
+      `logs/${new Date().toDateString()}.${configStatus}.log`,
       {
         flags: 'a',
       }
